@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="53Fetchfil.css" />
+  </head>
+  <body>
+    <div class="container">
+      <input type="text" /> <button>Search</button><br /><br />
+      <img src="" alt="" class="image" /><br /><span
+        ><p class="title"></p
+      ></span>
+    </div>
+    <script>
+      var inp = document.querySelector("input");
+      var btn = document.querySelector("button");
+      var imgTag = document.querySelector(".image");
+
+      async function getData() {
+        const url = "https://imdb-top-100-movies.p.rapidapi.com/";
+        const options = {
+          method: "GET",
+          headers: {
+            "x-rapidapi-key": "paste-your-api-here",
+            "x-rapidapi-host": "host-id-here",
+          },
+        };
+
+        try {
+          const inpVal = inp.value.toLocaleLowerCase().trim();
+          var pTag = document.querySelector(".title");
+          const response = await fetch(url, options);
+          const result = await response.json();
+          console.log(result);
+          result.map((item) => {
+            if (inpVal === item.title.toLowerCase()) {
+              const img = item.image;
+              imgTag.src = img;
+              imgTag.style.display = "block";
+              const title = item.title;
+              pTag.innerHTML = title;
+            }
+          });
+        } catch (error) {
+          console.error(error);
+        }
+      }
+      getData();
+      btn.addEventListener("click", getData);
+    </script>
+  </body>
+</html>

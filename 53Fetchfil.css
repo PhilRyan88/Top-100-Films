@@ -1,0 +1,32 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: linear-gradient(240deg, rgb(13, 119, 119), rgb(7, 7, 119));
+  height: 100vh;
+}
+.container {
+  display: flex;
+  justify-content: center;
+}
+input[type="text"] {
+  width: 400px;
+  position: relative;
+  top: 20px;
+  padding: 10px;
+  font-size: 18px;
+  outline: none;
+  border-style: none;
+  border-radius: 5px;
+}
+button {
+  position: relative;
+  top: 20px;
+  cursor: pointer;
+  left: 10px;
+  width: 75px;
+  border-radius: 5px;
+  border-style: none;
+}
