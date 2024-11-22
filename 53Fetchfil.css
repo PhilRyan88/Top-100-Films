@@ -7,10 +7,10 @@ body {
   background: linear-gradient(240deg, rgb(13, 119, 119), rgb(7, 7, 119));
   height: 100vh;
 }
-.container {
+/* .container {
   display: flex;
   justify-content: center;
-}
+} */
 input[type="text"] {
   width: 400px;
   position: relative;
